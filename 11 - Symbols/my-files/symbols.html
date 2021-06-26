@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Symbols</title>
+</head>
+<body>
+<script>
+  const wes = Symbol('Wes');
+  const person = Symbol('Wes');
+
+  const classRoom = {
+    [Symbol('Mark')] : { grade: 50, gender: 'male' },
+    [Symbol('Olivia')]: { grade: 80, gender: 'female' },
+    [Symbol('Olivia')]: { grade: 85, gender: 'female' },
+  };
+
+  for (const person in classRoom) {
+    console.log(person);
+  }
+
+  const symbols = Object.getOwnPropertySymbols(classRoom);
+  const data = symbols.map(symbol => classRoom[symbol]);
+  console.log(data);
+</script>
+</body>
+</html>
