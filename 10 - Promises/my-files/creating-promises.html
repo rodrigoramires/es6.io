@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Creating Promises!</title>
+</head>
+<body>
+<script>
+  const promise = new Promise((resolve, reject) => {
+    // resolve('Wes is cool');
+    setTimeout(() => {
+      reject(Error('Err wes isn\'t cool'));
+    }, 1000);
+  });
+
+  promise
+    .then(data => {
+      console.log(data);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+</script>
+</body>
+</html>
